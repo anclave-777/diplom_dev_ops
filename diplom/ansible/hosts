@@ -1,0 +1,33 @@
+[front]
+anclave-777.ru  letsencrypt_email=anclave-777@yandex.ru domain_name=anclave-777.ru
+
+[MySQL]
+db01.anclave-777.ru mysql_server_id=1 mysql_replication_role=master
+db02.anclave-777.ru mysql_server_id=2 mysql_replication_role=slave
+
+[MySQL:vars]
+ansible_ssh_common_args = '-o  ProxyCommand="ssh -W %h:%p -q -i /home/vagrant/cloud-terraform/id_rsa anclave-777@anclave-777.ru"'
+ansible_ssh_common_args = '-o  ProxyCommand="ssh -W %h:%p -q -i /home/vagrant/cloud-terraform/id_rsa anclave-777@anclave-777.ru"'
+
+[app]
+app.anclave-777.ru
+
+[app:vars]
+ansible_ssh_common_args = '-o  ProxyCommand="ssh -W %h:%p -q -i /home/vagrant/cloud-terraform/id_rsa anclave-777@anclave-777.ru"'
+
+[gitlab]
+gitlab.anclave-777.ru
+
+[runner]
+runner.anclave-777.ru
+
+[runner:vars]
+ansible_ssh_common_args = '-o  ProxyCommand="ssh -W %h:%p -q -i /home/vagrant/cloud-terraform/id_rsa anclave-777@anclave-777.ru"'
+
+
+[monitoring]
+monitoring.anclave-777.ru
+
+[monitoring:vars]
+ansible_ssh_common_args = '-o  ProxyCommand="ssh -W %h:%p -q -i /home/vagrant/cloud-terraform/id_rsa anclave-777@anclave-777.ru"'
+

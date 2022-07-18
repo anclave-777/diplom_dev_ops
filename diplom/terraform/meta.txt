@@ -1,0 +1,8 @@
+#cloud-config
+users:
+  - name: anclave-777
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh_authorized_keys:
+       - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2XYHEsZQuet1NseYARjTTyzfKzp3mE38La/L8Dyw7LyG59FnAM3YzkDs82bEhR4QBWbwE+N0ny++0db8jmn2BxJFa8OaqOE2qyCppAdUgqjQypRRZlN4L6vOBXoTm9+X6doqu61tnrlekkRcmQF1QsYzpqbwSfkLxN6WASwUu0tXcbZgPec/3kKAik0vHrpWClv4Q/o+7DupnibHDay3ZnpMfTmM6q9YiRQgl9gaKSBcfez1Mvn2arPPudMy5KCmy58atcW842HxWIrGY1hqArDra8q+Ez/V2rjcaUw6OphXts5nN+dCa8/CwRqygOBUuXuhtW5lbgDi6hoOcryyX root@vagrant

@@ -1,0 +1,34 @@
+{
+  "builders": [
+    {
+      "type":      "yandex",
+      "token":     "AQAAAAABKxJEAATuwYzoB2zkCU3ctz_ET7MEUzQ",
+      "folder_id": "b1ga6pbom71ac8qn3331",
+      "zone":      "ru-central1-a",
+
+      "image_name":        "ubuntu-with-gitlab2",
+      "image_family":      "ubuntu-gitlab",
+      "image_description": "my custom ubuntu with gitlab",
+
+      "source_image_family": "ubuntu-2004-lts",
+      "use_ipv4_nat":        true,
+      "disk_type":           "network-ssd",
+      "subnet_id":           "e9b17o9hq3cuq869fp5k",
+      "ssh_username":        "ubuntu"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "echo 'updating APT'",
+        "sudo apt-get update -y",
+	"curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash",
+        "sudo apt-get install -y gitlab-ce",
+        "sudo gitlab-ctl reconfigure",
+	"export http_proxy='http://anclave-777.ru:8118'",
+	"export https_proxy='https://anclave-777.ru:8118'"
+      ]
+    }
+  ]
+}

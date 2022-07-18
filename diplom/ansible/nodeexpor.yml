@@ -1,0 +1,16 @@
+- hosts: MySQL app gitlab runner monitoring
+  gather_facts: true
+  become:
+    true
+  become_method:
+    sudo
+  become_user:
+    root
+  remote_user:
+    anclave-777
+  roles:
+   - Node_exp
+
+  environment:
+     http_proxy: http://anclave-777:8118
+     https_proxy: http://anclave-777:8118

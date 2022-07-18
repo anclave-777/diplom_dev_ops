@@ -1,0 +1,71 @@
+server_tokens off;
+
+server {
+    listen 80;
+    server_name {{ domain_name }};
+
+    location /.well-known/acme-challenge {
+        root /var/www/letsencrypt;
+        try_files $uri $uri/ =404;
+    }
+
+    location / {
+        rewrite ^ https://{{ domain_name }}$request_uri? permanent;
+    }
+}
+
+server {
+    listen 80;
+    server_name gitlab.anclave-777.ru;
+
+    location /.well-known/acme-challenge {
+        root /var/www/letsencrypt;
+        try_files $uri $uri/ =404;
+    }
+
+    location / {
+        rewrite ^ https://gitlab.anclave-777.ru$request_uri? permanent;
+    }
+}
+
+server {
+    listen 80;
+    server_name grafana.anclave-777.ru;
+
+    location /.well-known/acme-challenge {
+        root /var/www/letsencrypt;
+        try_files $uri $uri/ =404;
+    }
+
+    location / {
+        rewrite ^ https://grafana.anclave-777.ru$request_uri? permanent;
+    }
+}
+
+server {
+    listen 80;
+    server_name prometheus.anclave-777.ru;
+
+    location /.well-known/acme-challenge {
+        root /var/www/letsencrypt;
+        try_files $uri $uri/ =404;
+    }
+
+    location / {
+        rewrite ^ https://prometheus.anclave-777.ru$request_uri? permanent;
+    }
+}
+
+server {
+    listen 80;
+    server_name alertmanager.anclave-777.ru;
+
+    location /.well-known/acme-challenge {
+        root /var/www/letsencrypt;
+        try_files $uri $uri/ =404;
+    }
+
+    location / {
+        rewrite ^ https://alertmanager.anclave-777.ru$request_uri? permanent;
+    }
+}
