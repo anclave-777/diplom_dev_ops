@@ -285,8 +285,11 @@ ansible_ssh_common_args = '-o  ProxyCommand="ssh -W %h:%p -q -i /home/vagrant/cl
 **Зарегестрированный раннер**
 ![image](https://user-images.githubusercontent.com/44027303/178934106-4387b7ce-21b3-4678-94a2-0297033e5395.png)
 
-**При любом коммите в репозиторий с WordPress и создании тега (например, v1.0.0) происходит деплой на виртуальную машину.**
+**При любом коммите в репозиторий с WordPress происходит деплой на виртуальную машину.**
 ![image](https://user-images.githubusercontent.com/44027303/179519355-a04aa55e-821b-47bc-8c93-9d63d182c7c6.png)
+
+![image](https://user-images.githubusercontent.com/44027303/179521547-17a9184f-0c8e-4a27-91c5-a60f62632910.png)
+
 
 
 **Результат. Выполнено, роль раннера отыгрывается командами:**
