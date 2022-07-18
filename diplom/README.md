@@ -354,6 +354,10 @@ ___
 **Результат.**
 **Все указанные в задаче сервисы устанавливаются командой ansible-playbook  --private-key=/home/vagrant/cloud-terraform/id_rsa  -i hosts monitoring.yml**
 **Данные из прометея успешно импортирются в grafana и alertmanager осуществляет  мониторинг хостов **
+
+
+
+
 ---
 ## Что необходимо для сдачи задания?
 
