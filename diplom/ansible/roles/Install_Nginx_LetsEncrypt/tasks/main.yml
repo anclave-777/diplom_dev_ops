@@ -37,27 +37,27 @@
     creates: /etc/letsencrypt/live/{{ domain_name }}
 
 - name: Create letsencrypt certificate front
-  shell: letsencrypt certonly --test-cert -n --webroot --staging -w /var/www/letsencrypt -m {{ letsencrypt_email }} --agree-tos -d {{ domain_name }}
+  shell: letsencrypt certonly  -n --webroot  -w /var/www/letsencrypt -m {{ letsencrypt_email }} --agree-tos -d {{ domain_name }}
   args:
     creates: /etc/letsencrypt/live/{{ domain_name }}
 
 - name: Create letsencrypt certificate gitlab
-  shell: letsencrypt certonly --test-cert -n --webroot --staging -w /var/www/letsencrypt -m {{ letsencrypt_email }} --agree-tos -d gitlab.anclave-777.ru
+  shell: letsencrypt certonly  -n --webroot  -w /var/www/letsencrypt -m {{ letsencrypt_email }} --agree-tos -d gitlab.anclave-777.ru
   args:
     creates: /etc/letsencrypt/live/gitlab.anclave-777.ru
 
 - name: Create letsencrypt certificate grafana
-  shell: letsencrypt certonly --test-cert -n --webroot --staging -w /var/www/letsencrypt -m {{ letsencrypt_email }} --agree-tos -d grafana.anclave-777.ru
+  shell: letsencrypt certonly  -n --webroot  -w /var/www/letsencrypt -m {{ letsencrypt_email }} --agree-tos -d grafana.anclave-777.ru
   args:
     creates: /etc/letsencrypt/live/grafana.anclave-777.ru
 
 - name: Create letsencrypt certificate prometheus
-  shell: letsencrypt certonly --test-cert -n --webroot --staging -w /var/www/letsencrypt -m {{ letsencrypt_email }} --agree-tos -d prometheus.anclave-777.ru
+  shell: letsencrypt certonly  -n --webroot  -w /var/www/letsencrypt -m {{ letsencrypt_email }} --agree-tos -d prometheus.anclave-777.ru
   args:
     creates: /etc/letsencrypt/live/prometheus.anclave-777.ru
 
 - name: Create letsencrypt certificate alertmanager
-  shell: letsencrypt certonly --test-cert -n --webroot --staging -w /var/www/letsencrypt -m {{ letsencrypt_email }} --agree-tos -d alertmanager.anclave-777.ru
+  shell: letsencrypt certonly  -n --webroot  -w /var/www/letsencrypt -m {{ letsencrypt_email }} --agree-tos -d alertmanager.anclave-777.ru
   args:
     creates: /etc/letsencrypt/live/altermater.anclave-777.ru
 
